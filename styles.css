@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#ec593f;
+}
+.topleft { font-family: "Brush Script MT", cursive;
+    font-size: 100px; font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 80px;
+    display: flex;
+    text-align: left;
+    position: absolute;
+    top: 8px;
+    left: 70px;
+}
+ 
+.container {
+    position: relative;
+}
+  
+.window {
+    position: relative;
+}
+  
+.frame {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    border: 5px solid white;
+    background-color: #48cae4;
+    overflow:hidden;
+}
+  
+.sill {
+    position: absolute;
+    left:-20px;
+    width:400px;
+    height:10px;
+    background-color: #c5c3c6;
+    z-index:15;
+    box-shadow: 5px 7px 0 rgba(0,0,0,0.05);
+}
+  
+.sill:before {
+    width:340px;
+    height:240px;
+    border: 5px solid white;
+    content:"";
+    position: absolute;
+    top:-300px;
+    left:25px;
+    top:-255px;
+    box-shadow:inset 5px 5px rgba(0,0,0,0.05);
+}
+  
+.sill:after {
+    content:"";
+    position: absolute;
+    background-color: white;
+    height: 240px;
+    width:10px;
+    left:193px;
+    top:-250px;
+    box-shadow:5px 1px rgba(0,0,0,0.05);
+}
+  
+.snow {
+    position: absolute;
+}
+  
+.snowflake1, .snowflake2, .snowflake3, .snowflake4, .snowflake5 {
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    opacity:0.7;
+    position: absolute;
+    z-index:10;
+    background-color: white;
+}
+  
+.snowflake1 {
+    animation: fall 4s linear infinite;
+    box-shadow: 100px -10px white, 200px -5px white, -20px -35px white, 250px -50px white, 240px -150px white, 40px -130px white;
+    left:50px;
+}
+  
+.snowflake2 {
+    animation: fall 5s linear infinite;
+    animation-delay:2s;
+    top:-55px;
+    box-shadow: 75px -10px white, 163px -10px white, -20px -35px white, 250px -50px white, 240px -150px white, 40px -130px white;
+    left:30px;
+}
+  
+.snowflake3 {
+    animation: fall 4.5s linear infinite;
+    animation-delay:1s;
+    top:-85px;
+    box-shadow: 90px -10px white, 180px -15px white, -20px -35px white, 230px -50px white, 10px -140px white, 70px -120px white;
+    left:60px;
+}
+  
+.snowflake4 {
+    animation: fall 3.5s linear infinite;
+    top:-115px;
+    box-shadow: 70px -20px white, 140px -5px white, -20px -35px white, 230px -50px white, 110px -80px white, 99px -25 white;
+    left:80px;
+}
+  
+.snowflake5 {
+    animation: fall 2.9s linear infinite;
+    animation-delay:3s;
+    top:-145px;
+    box-shadow: 190px -10px white, 280px -15px white, 320px -35px white, 230px -50px white, 113px -100px white, 256px -50px white, 116px -50px white;
+    left:-5px;
+}
+  
+@keyframes fall {
+      100% {transform: translateY(400px);}
+}
+  
+#up {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #F3F1E7;
+    border-radius: 50%;
+    opacity: 0;
+    top: 220px;
+    left: 255px;
+    z-index:20;
+}
+  
+@keyframes up {
+0%{
+      transform: translateY(0) scale(0.5);
+      opacity: 0.9;
+}
+100%{
+      transform: translateY(-50px) scale(1);
+      opacity: 0;
+}
+}
